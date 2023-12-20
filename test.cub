@@ -1,0 +1,14 @@
+NO   ./textures/test_n_letter.xpm  
+SO ./textures/test_s_letter.xpm
+WE ./textures/test_w_letter.xpm
+EA ./textures/test_e_letter.xpm
+
+F      54,78,87
+C   245,45,31
+
+
+            1111111
+            1010001
+            1N00001
+            1000001
+            1111111
