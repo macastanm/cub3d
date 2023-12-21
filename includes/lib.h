@@ -218,6 +218,7 @@ int			ft_release_key(int keysym, t_data *data);
 int			ft_movements(t_data *data);
 void		move_vertical(t_data *data, char flag);
 void		move_hozintal(t_data *data, char flag);
+void		check_wall_hit(t_data *data, double temp_x, double temp_y);
 void		rotate_player(t_data *data, char flag);
 
 #endif

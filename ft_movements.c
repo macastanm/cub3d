@@ -33,37 +33,48 @@ int	ft_movements(t_data *data)
 
 void	move_vertical(t_data *data, char flag)
 {
+	double	temp_x;
+	double	temp_y;
+	int		dir;
+
+	temp_x = data->p_x;
+	temp_y = data->p_y;
+	dir = 0;
 	if (flag == 'w')
-	{
-		if (data->og_map[(int)(data->p_y + data->dir_y * 0.2)][(int)data->p_x] != '1')
-			data->p_y += data->dir_y * 0.2;
-		if (data->og_map[(int)data->p_y][(int)(data->p_x + data->dir_x * 0.2)] != '1')
-			data->p_x += data->dir_x * 0.2;
-	}
-	else if (flag == 's')
-	{
-		if (data->og_map[(int)(data->p_y + data->dir_y * 0.2)][(int)data->p_x] != '1')
-			data->p_y -= data->dir_y * 0.2;
-		if (data->og_map[(int)data->p_y][(int)(data->p_x + data->dir_x * 0.2)] != '1')
-			data->p_x -= data->dir_x * 0.2;
-	}
+		dir = 1;
+	else
+		dir = -1;
+	data->p_x += 0.2 * data->dir_x * dir;
+	data->p_y += 0.2 * data->dir_y * dir;
+	check_wall_hit(data, temp_x, temp_y);
 }
 
 void	move_hozintal(t_data *data, char flag)
 {
+	double	temp_x;
+	double	temp_y;
+
+	temp_x = data->p_x;
+	temp_y = data->p_y;
 	if (flag == 'a')
 	{
-		if (data->og_map[(int) (data->p_y + data->dir_x * 0.2)][(int) data->p_x] != '1')
-			data->p_y += data->dir_x * 0.2;
-		if (data->og_map[(int) data->p_y][(int) (data->p_x + data->dir_y * 0.2)] != '1')
-			data->p_x -= data->dir_y * 0.2;
+		data->p_x += data->dir_y * 0.2;
+		data->p_y += -data->dir_x * 0.2;
 	}
-	else if (flag == 'd')
+	else
 	{
-		if (data->og_map[(int) (data->p_y + data->dir_x * 0.2)][(int) data->p_x] != '1')
-			data->p_y -= data->dir_x * 0.2;
-		if (data->og_map[(int) data->p_y][(int) (data->p_x + data->dir_y * 0.2)] != '1')
-			data->p_x += data->dir_y * 0.2;
+		data->p_x += -data->dir_y * 0.2;
+		data->p_y += data->dir_x * 0.2;
+	}
+	check_wall_hit(data, temp_x, temp_y);
+}
+
+void	check_wall_hit(t_data *data, double temp_x, double temp_y)
+{
+	if (data->og_map[(int)data->p_y][(int)data->p_x] == '1')
+	{
+		data->p_y = temp_y;
+		data->p_x = temp_x;
 	}
 }
 
