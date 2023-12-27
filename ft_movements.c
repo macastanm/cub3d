@@ -61,7 +61,7 @@ void	move_hozintal(t_data *data, char flag)
 		data->p_x += data->dir_y * 0.2;
 		data->p_y += -data->dir_x * 0.2;
 	}
-	else
+	else if (flag == 'd')
 	{
 		data->p_x += -data->dir_y * 0.2;
 		data->p_y += data->dir_x * 0.2;

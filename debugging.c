@@ -62,3 +62,40 @@ void	line_print_map(t_data *data, int size)
 		printf(GRY"*");
 	printf("\n"BLD);
 }
+
+void	print_all(t_data *data)
+{
+	static int	j;
+
+	printf("\n%i vezes:\n", j);
+	printf("px- %f\n", data->p_x);
+	printf("py- %f\n", data->p_y);
+	printf("dir_x- %f\n", data->dir_x);
+	printf("dir_y- %f\n", data->dir_y);
+	printf("plane_x- %f\n", data->plane_x);
+	printf("plane_y- %f\n", data->plane_y);
+	printf("camera_x- %lf\n", data->camera_x);
+	printf("raydir_x- %lf\n", data->raydir_x);
+	printf("raydir_y- %lf\n", data->raydir_y);
+	printf("side_dist_x- %lf\n", data->side_dist_x);
+	printf("side_dist_y- %lf\n", data->side_dist_y);
+	printf("delta_dist_x- %lf\n", data->delta_dist_x);
+	printf("delta_dist_y- %lf\n", data->delta_dist_y);
+	printf("i: %i\n", data->i);
+	printf("mapx: %i\n", data->mapx);
+	printf("mapy: %i\n", data->mapy);
+	printf("pwalldist- %lf\n", data->pwalldist);
+	printf("stepx: %i\n", data->stepx);
+	printf("stepy: %i\n", data->stepy);
+	printf("hit: %i\n", data->hit);
+	printf("side: %i\n", data->side);
+	printf("draw_start: %i\n", data->draw_start);
+	printf("draw_end: %i\n", data->draw_end);
+	printf("lineheight: %i\n", data->lineheight);
+	printf("wall_x- %lf\n", data->wall_x);
+	printf("tex_x: %i\n", data->tex_x);
+	printf("tex_y: %i\n", data->tex_y);
+	printf("text_step- %lf\n", data->text_step);
+	printf("text_pos- %lf\n", data->text_pos);
+	j++;
+}

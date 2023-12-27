@@ -17,16 +17,13 @@ int	ft_press_key(int keysym, t_data *data)
 	if (keysym == 65307)
 		free_exit(data);
 	if (keysym == 119)
-	{
 		data->press_w = 1;
-		printf("press w\n");
-	}
 	if (keysym == 115)
 		data->press_s = 1;
 	if (keysym == 97)
 		data->press_a = 1;
 	if (keysym == 100)
-		data->press_s = 1;
+		data->press_d = 1;
 	if (keysym == 65361)
 		data->press_left = 1;
 	if (keysym == 65363)
@@ -37,16 +34,13 @@ int	ft_press_key(int keysym, t_data *data)
 int	ft_release_key(int keysym, t_data *data)
 {
 	if (keysym == 119)
-	{
 		data->press_w = 0;
-		printf("release w\n");
-	}
 	if (keysym == 115)
 		data->press_s = 0;
 	if (keysym == 97)
 		data->press_a = 0;
 	if (keysym == 100)
-		data->press_s = 0;
+		data->press_d = 0;
 	if (keysym == 65361)
 		data->press_left = 0;
 	if (keysym == 65363)
