@@ -23,7 +23,8 @@ void	draw_wall(t_data *data, int i)
 	data->tex_x = (int)(data->wall_x * (double)TEX_WIDTH);
 	data->tex_x = TEX_WIDTH - data->tex_x - 1;
 	data->text_step = 1.0 * TEX_WIDTH / data->lineheight;
-	data->text_pos = (data->draw_start - HEIGHT / 2 + data->lineheight / 2) * data->text_step;
+	data->text_pos = (data->draw_start - HEIGHT / 2 + data->lineheight / 2)
+		* data->text_step;
 	while (y < data->draw_end)
 	{
 		data->tex_y = (int)data->text_pos & (TEX_WIDTH - 1);
@@ -39,7 +40,8 @@ void	draw_wall(t_data *data, int i)
 
 int	ft_get_pixel(t_data *data, int x, int y)
 {
-	return (*(unsigned int *)((data->aux->addr + (y * data->aux->line_length) + (x * data->aux->bpp / 8))));
+	return (*(unsigned int *)((data->aux->addr + (y * data->aux->line_length)
+			+ (x * data->aux->bpp / 8))));
 }
 
 void	get_tex_x(t_data *data)

@@ -39,12 +39,15 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
 	char	*dst;
 
-	dst = data->img->addr + (y * data->img->line_length + x * (data->img->bpp / 8));
+	dst = data->img->addr + (y * data->img->line_length + x
+			* (data->img->bpp / 8));
 	*(unsigned int *)dst = color;
 }
 
 void	init_color(t_data *data)
 {
-	data->info->c_color = (0x010000 * data->info->ceiling_r) + (0x000100 * data->info->ceiling_g) + data->info->ceiling_b;
-	data->info->f_color = (0x010000 * data->info->floor_r) + (0x000100 * data->info->floor_g) + data->info->floor_b;
+	data->info->c_color = (0x010000 * data->info->ceiling_r)
+		+ (0x000100 * data->info->ceiling_g) + data->info->ceiling_b;
+	data->info->f_color = (0x010000 * data->info->floor_r)
+		+ (0x000100 * data->info->floor_g) + data->info->floor_b;
 }

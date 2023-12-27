@@ -26,7 +26,8 @@ int	ft_movements(t_data *data)
 		rotate_player(data, 'l');
 	if (data->press_right == 1)
 		rotate_player(data, 'r');
-	if (data->press_w || data->press_s || data->press_a || data->press_d || data->press_left || data->press_right)
+	if (data->press_w || data->press_s || data->press_a || data->press_d
+		|| data->press_left || data->press_right)
 		return (1);
 	return (0);
 }

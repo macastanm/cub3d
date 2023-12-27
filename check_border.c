@@ -16,7 +16,7 @@ void	check_borders(t_data *data)
 {
 	int	x;
 	int	y;
-	
+
 	y = 0;
 	data->map_found = 0;
 	get_map_4_checks(data);

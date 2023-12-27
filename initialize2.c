@@ -35,6 +35,30 @@ void	init_texture_stuff(t_data *data)
 	init_texture_stuff2(data);
 }
 
+void	init_ray_stuff(t_data *structure)
+{
+	structure->p_x = 0;
+	structure->p_y = 0;
+	structure->dir_x = 0;
+	structure->dir_y = 0;
+	structure->plane_x = 0;
+	structure->plane_y = 0;
+	structure->camera_x = 0;
+	structure->raydir_x = 0;
+	structure->raydir_y = 0;
+	structure->side_dist_x = 0;
+	structure->side_dist_y = 0;
+	structure->delta_dist_x = 0;
+	structure->delta_dist_y = 0;
+	structure->i = 0;
+	structure->mapx = 0;
+	structure->mapy = 0;
+	structure->pwalldist = 0;
+	structure->stepx = 0;
+	structure->stepy = 0;
+	init_ray_stuff2(structure);
+}
+
 void	init_texture_stuff2(t_data *data)
 {
 	data->we->addr = NULL;
@@ -51,11 +75,36 @@ void	init_texture_stuff2(t_data *data)
 	data->ea->endian = 0;
 }
 
+void	init_ray_stuff2(t_data *structure)
+{
+	structure->hit = 0;
+	structure->side = 0;
+	structure->draw_start = 0;
+	structure->draw_end = 0;
+	structure->lineheight = 0;
+	structure->wall_x = 0;
+	structure->tex_x = 0;
+	structure->tex_y = 0;
+	structure->text_step = 0;
+	structure->text_pos = 0;
+	structure->press_a = 0;
+	structure->press_d = 0;
+	structure->press_w = 0;
+	structure->press_s = 0;
+	structure->press_right = 0;
+	structure->press_left = 0;
+}
+
 void	open_addr(t_data *data)
 {
-	data->img->addr = mlx_get_data_addr(data->img->img, &data->img->bpp, &data->img->line_length, &data->img->endian);
-	data->no->addr = mlx_get_data_addr(data->no->img, &data->no->bpp, &data->no->line_length, &data->no->endian);
-	data->so->addr = mlx_get_data_addr(data->so->img, &data->so->bpp, &data->so->line_length, &data->so->endian);
-	data->we->addr = mlx_get_data_addr(data->we->img, &data->we->bpp, &data->we->line_length, &data->we->endian);
-	data->ea->addr = mlx_get_data_addr(data->ea->img, &data->ea->bpp, &data->ea->line_length, &data->ea->endian);
+	data->img->addr = mlx_get_data_addr(data->img->img, &data->img->bpp,
+			&data->img->line_length, &data->img->endian);
+	data->no->addr = mlx_get_data_addr(data->no->img, &data->no->bpp,
+			&data->no->line_length, &data->no->endian);
+	data->so->addr = mlx_get_data_addr(data->so->img, &data->so->bpp,
+			&data->so->line_length, &data->so->endian);
+	data->we->addr = mlx_get_data_addr(data->we->img, &data->we->bpp,
+			&data->we->line_length, &data->we->endian);
+	data->ea->addr = mlx_get_data_addr(data->ea->img, &data->ea->bpp,
+			&data->ea->line_length, &data->ea->endian);
 }

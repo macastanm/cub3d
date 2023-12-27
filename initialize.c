@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "includes/lib.h"
 
 t_data	*initialize_struct(char *path)
@@ -37,41 +35,7 @@ t_data	*initialize_struct(char *path)
 	init_texture_stuff(structure);
 	structure->og_map = NULL;
 	structure->map = NULL;
-	structure->p_x = 0;
-	structure->p_y = 0;
-	structure->dir_x = 0;
-	structure->dir_y = 0;
-	structure->plane_x = 0;
-	structure->plane_y = 0;
-	structure->camera_x = 0;
-	structure->raydir_x = 0;
-	structure->raydir_y = 0;
-	structure->side_dist_x = 0;
-	structure->side_dist_y = 0;
-	structure->delta_dist_x = 0;
-	structure->delta_dist_y = 0;
-	structure->i = 0;
-	structure->mapx = 0;
-	structure->mapy = 0;
-	structure->pwalldist = 0;
-	structure->stepx = 0;
-	structure->stepy = 0;
-	structure->hit = 0;
-	structure->side = 0;
-	structure->draw_start = 0;
-	structure->draw_end = 0;
-	structure->lineheight = 0;
-	structure->wall_x = 0;
-	structure->tex_x = 0;
-	structure->tex_y = 0;
-	structure->text_step = 0;
-	structure->text_pos = 0;
-	structure->press_a = 0;
-	structure->press_d = 0;
-	structure->press_w = 0;
-	structure->press_s = 0;
-	structure->press_right = 0;
-	structure->press_left = 0;
+	init_ray_stuff(structure);
 	return (structure);
 }
 

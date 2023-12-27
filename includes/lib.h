@@ -141,7 +141,6 @@ void		convert_string_to_rgb(t_data *data, char **rgb, char place);
 void		print_cub_info(t_data *data);
 void		print_map(t_data *data, char **map, int size);
 void		line_print_map(t_data *data, int size);
-void		print_all(t_data *data);
 
 ///////////////////////frees.c/////////////////////////
 int			error_handler_checks(t_data *data, int i);
@@ -160,7 +159,9 @@ t_info		*initialize_tinfo(char *path);
 
 /////////////////////initialize2.c/////////////////////
 void		init_texture_stuff(t_data *data);
+void		init_ray_stuff(t_data *structure);
 void		init_texture_stuff2(t_data *data);
+void		init_ray_stuff2(t_data *structure);
 void		open_addr(t_data *data);
 
 /////////////////////check_map.c//////////////////////
