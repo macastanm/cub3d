@@ -61,10 +61,29 @@ SRC				=	parser.c \
 					ft_key.c \
 					ft_movements.c
 OBJS 			:= $(SRC:.c=.o)
-BONUS			=
+BONUS				=	bonus/parser.c \
+					bonus/main.c \
+					bonus/debugging.c \
+					bonus/utils.c \
+					bonus/frees.c \
+					bonus/frees2.c \
+					bonus/initialize.c \
+					bonus/initialize2.c \
+					bonus/checks.c \
+					bonus/check_map.c \
+					bonus/get_map.c \
+					bonus/get_map2.c \
+					bonus/verify_map.c \
+					bonus/check_border.c \
+					bonus/windows.c \
+					bonus/rendering.c \
+					bonus/raycaster.c \
+					bonus/draw_wall.c \
+					bonus/ft_key.c \
+					bonus/ft_movements.c
 OBJS_BONUS		:= $(BONUS:.c=.o)
 NAME			= cub3D
-NAME_BONUS		= cub3D
+NAME_BONUS		= cub3D_bonus
 TARGET			= $(addprefix $(SRCS)/, $(OBJS))
 TARGET_BONUS	= $(addprefix $(SRCS_BONUS)/, $(OBJS_BONUS))
 
@@ -90,6 +109,7 @@ clean:
 	@$(MAKE) clean -C ./libft
 	@$(MAKE) clean -C ./minilibx-linux
 	@$(RM) $(OBJS)
+	@$(RM) $(OBJS_BONUS)
 	clear
 	echo "$(RED)Object files have been deleted!$(RESET)"
 
@@ -97,16 +117,13 @@ fclean: clean
 	@$(MAKE) fclean -C ./libft
 	@$(MAKE) clean -C ./minilibx-linux
 	@$(RM) $(NAME)
+	@$(RM) $(NAME_BONUS)
 	clear
 	echo "$(RED)Object and Executable files have been deleted!$(RESET)"
 
-bonus: $(TARGET_BONUS)
-	echo "[$(CYAN)Compiling$(RESET)] $(CFLAGS) $(GREEN)libft/*$(RESET)"
-	make $(MKFLAGS) -C $(LIBFT)
-	echo "[$(CYAN)Compiling$(RESET)] $(CFLAGS) $(GREEN)minilibx-linux/*$(RESET)"
-	make $(MKFLAGS) -sC $(LIBX)
-	$(CC) $(CFLAGS) bonus/main.c $(TARGET_BONUS) $(LIBFTFLAGS) $(LIBXFLAGS) -o $(NAME_BONUS) -I $(DEPS)
-	echo "$(GREEN)Done.$(RESET)"
+bonus: $(OBJS_BONUS) $(LIBFT) $(MINILIBX)
+	@$(CC) $(CFLAGS) $(OBJS_BONUS) $(LIBFT) $(MINILIBX) $(MFLAGS) -o $(NAME_BONUS) -lm
+	clear
 
 debug:
 	$(CC) $(CFLAGS) $(LIBXFLAGS) main.c $(SRC) libft/libft.a minilibx-linux/libmlx.a -g
