@@ -100,6 +100,7 @@ $(MINILIBX):
 $(NAME): $(OBJS) $(LIBFT) $(MINILIBX)
 	@$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(MINILIBX) $(MFLAGS) -o $(NAME) -lm
 	clear
+	echo "$(GREEN)./cub3D is ready!$(RESET)"
 
 %.o : %.c
 	echo "[$(CYAN)Compiling$(RESET)] $(CFLAGS) $(GREEN)$<$(RESET)"
@@ -124,6 +125,7 @@ fclean: clean
 bonus: $(OBJS_BONUS) $(LIBFT) $(MINILIBX)
 	@$(CC) $(CFLAGS) $(OBJS_BONUS) $(LIBFT) $(MINILIBX) $(MFLAGS) -o $(NAME_BONUS) -lm
 	clear
+	echo "$(GREEN)./cub3D_bonus is ready!$(RESET)"
 
 debug:
 	$(CC) $(CFLAGS) $(LIBXFLAGS) main.c $(SRC) libft/libft.a minilibx-linux/libmlx.a -g
