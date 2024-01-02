@@ -33,8 +33,8 @@
 # define GRN "\033[1;32m"
 # define GRY "\033[38;2;150;150;150m"
 
-# define HEIGHT 800
-# define WIDTH 600
+# define HEIGHT 920
+# define WIDTH 1920
 # define TEX_WIDTH 64
 # define TEX_WIDTH 64
 
