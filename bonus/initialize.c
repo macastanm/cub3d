@@ -57,7 +57,6 @@ void	open_images(t_data *data)
 			&data->ea->width, &data->ea->height);
 	data->we->img = mlx_xpm_file_to_image(data->mlx, data->info->we_tex,
 			&data->we->width, &data->we->height);
-	data->info->hand_tex = mlx_xpm_file_to_image(data->mlx, HAND, &data->info->hand_width, &data->info->hand_height);
 	if ((data->no->img == NULL) || (data->so->img == NULL)
 		|| (data->ea->img == NULL) || (data->we->img == NULL))
 		error_handler_checks(data, -6);
