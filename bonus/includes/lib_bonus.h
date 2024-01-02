@@ -6,7 +6,7 @@
 /*   By: ccosta-c <ccosta-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:39:41 by ccosta-c          #+#    #+#             */
-/*   Updated: 2023/11/30 16:01:05 by ccosta-c         ###   ########.fr       */
+/*   Updated: 2024/01/02 15:29:58 by ccosta-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@
 # define BLD "\033[1;37m"
 # define GRN "\033[1;32m"
 # define GRY "\033[38;2;150;150;150m"
+# define HAND "notransparent.xpm"
 
 # define HEIGHT 600
 # define WIDTH 800
@@ -45,6 +46,9 @@ typedef struct s_info
 	char	*so_tex;
 	char	*we_tex;
 	char	*ea_tex;
+	void	*hand_tex;
+	int		hand_height;
+	int		hand_width;
 	int		floor_r;
 	int		floor_g;
 	int		floor_b;

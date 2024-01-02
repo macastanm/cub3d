@@ -6,7 +6,7 @@
 /*   By: ccosta-c <ccosta-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 11:36:07 by ccosta-c          #+#    #+#             */
-/*   Updated: 2023/11/30 16:00:29 by ccosta-c         ###   ########.fr       */
+/*   Updated: 2024/01/02 15:36:42 by ccosta-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	draw_raycast(t_data *data)
 {
 	put_ceiling_floor(data);
 	data->i = 0;
-	while (data-> i < WIDTH)
+	while (data->i < WIDTH)
 	{
 		ray_calculations(data);
 		get_step_sidedist(data);
@@ -38,6 +38,7 @@ void	draw_raycast(t_data *data)
 		data->i++;
 	}
 	mlx_put_image_to_window(data->mlx, data->win, data->img->img, 0, 0);
+	mlx_put_image_to_window(data->mlx, data->win, data->info->hand_tex, 0, 0);
 }
 
 int	game_loop(t_data *data)

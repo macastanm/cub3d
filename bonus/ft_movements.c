@@ -45,8 +45,8 @@ void	move_vertical(t_data *data, char flag)
 		dir = 1;
 	else
 		dir = -1;
-	data->p_x += 0.2 * data->dir_x * dir;
-	data->p_y += 0.2 * data->dir_y * dir;
+	data->p_x += 0.05 * data->dir_x * dir;
+	data->p_y += 0.05 * data->dir_y * dir;
 	check_wall_hit(data, temp_x, temp_y);
 }
 
@@ -59,13 +59,13 @@ void	move_hozintal(t_data *data, char flag)
 	temp_y = data->p_y;
 	if (flag == 'a')
 	{
-		data->p_x += data->dir_y * 0.2;
-		data->p_y += -data->dir_x * 0.2;
+		data->p_x += data->dir_y * 0.05;
+		data->p_y += -data->dir_x * 0.05;
 	}
 	else if (flag == 'd')
 	{
-		data->p_x += -data->dir_y * 0.2;
-		data->p_y += data->dir_x * 0.2;
+		data->p_x += -data->dir_y * 0.05;
+		data->p_y += data->dir_x * 0.05;
 	}
 	check_wall_hit(data, temp_x, temp_y);
 }
@@ -85,7 +85,7 @@ void	rotate_player(t_data *data, char flag)
 	double	temp_x;
 	double	temp_y;
 
-	angle = 0.10;
+	angle = 0.02;
 	if (flag != 'r')
 		angle *= -1;
 	temp_x = data->dir_x * cos(angle) - data->dir_y * sin(angle);
