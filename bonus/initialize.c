@@ -6,7 +6,7 @@
 /*   By: ccosta-c <ccosta-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 12:23:46 by ccosta-c          #+#    #+#             */
-/*   Updated: 2024/01/02 14:35:37 by ccosta-c         ###   ########.fr       */
+/*   Updated: 2024/01/03 16:08:38 by ccosta-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,12 @@ t_data	*initialize_struct(char *path)
 	structure->so = malloc(sizeof (t_textures));
 	structure->we = malloc(sizeof (t_textures));
 	structure->ea = malloc(sizeof (t_textures));
-	structure->mini = malloc(sizeof (t_minimap));
+	structure->sone = malloc(sizeof (t_textures));
+	structure->stwo = malloc(sizeof (t_textures));
+	structure->sthree = malloc(sizeof (t_textures));
 	structure->map_height = 0;
 	structure->map_width = 0;
+	structure->sprite = 1;
 	structure->map_found = false;
 	structure->win = NULL;
 	structure->mlx = NULL;
@@ -33,6 +36,9 @@ t_data	*initialize_struct(char *path)
 	structure->so->img = NULL;
 	structure->ea->img = NULL;
 	structure->we->img = NULL;
+	structure->sone->img = NULL;
+	structure->stwo->img = NULL;
+	structure->sthree->img = NULL;
 	init_texture_stuff(structure);
 	structure->og_map = NULL;
 	structure->map = NULL;
@@ -61,6 +67,12 @@ void	open_images(t_data *data)
 	if ((data->no->img == NULL) || (data->so->img == NULL)
 		|| (data->ea->img == NULL) || (data->we->img == NULL))
 		error_handler_checks(data, -6);
+	data->sone->img = mlx_xpm_file_to_image(data->mlx,
+			SONE, &data->sone->width, &data->sone->height);
+	data->stwo->img = mlx_xpm_file_to_image(data->mlx,
+			STWO, &data->stwo->width, &data->stwo->height);
+	data->sthree->img = mlx_xpm_file_to_image(data->mlx,
+			STHREE, &data->sthree->width, &data->sthree->height);
 }
 
 t_info	*initialize_tinfo(char *path)

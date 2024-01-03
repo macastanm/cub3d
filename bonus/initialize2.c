@@ -32,6 +32,24 @@ void	init_texture_stuff(t_data *data)
 	data->so->bpp = 0;
 	data->so->line_length = 0;
 	data->so->endian = 0;
+	data->sone->addr = NULL;
+	data->sone->height = 0;
+	data->sone->width = 0;
+	data->sone->bpp = 0;
+	data->sone->line_length = 0;
+	data->sone->endian = 0;
+	data->stwo->addr = NULL;
+	data->stwo->height = 0;
+	data->stwo->width = 0;
+	data->stwo->bpp = 0;
+	data->stwo->line_length = 0;
+	data->stwo->endian = 0;
+	data->sthree->addr = NULL;
+	data->sthree->height = 0;
+	data->sthree->width = 0;
+	data->sthree->bpp = 0;
+	data->sthree->line_length = 0;
+	data->sthree->endian = 0;
 	init_texture_stuff2(data);
 }
 
@@ -73,7 +91,6 @@ void	init_texture_stuff2(t_data *data)
 	data->ea->bpp = 0;
 	data->ea->line_length = 0;
 	data->ea->endian = 0;
-	init_minimap_stuff(data);
 }
 
 void	init_ray_stuff2(t_data *structure)
@@ -108,4 +125,11 @@ void	open_addr(t_data *data)
 			&data->we->line_length, &data->we->endian);
 	data->ea->addr = mlx_get_data_addr(data->ea->img, &data->ea->bpp,
 			&data->ea->line_length, &data->ea->endian);
+	data->sone->addr = mlx_get_data_addr(data->sone->img, &data->sone->bpp,
+			&data->sone->line_length, &data->sone->endian);
+	data->stwo->addr = mlx_get_data_addr(data->stwo->img, &data->stwo->bpp,
+			&data->stwo->line_length, &data->stwo->endian);
+	data->sthree->addr = mlx_get_data_addr(data->sthree->img,
+			&data->sthree->bpp, &data->sthree->line_length,
+			&data->sthree->endian);
 }
