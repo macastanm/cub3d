@@ -58,6 +58,11 @@ void	free_exit_checks(t_data *data)
 	free(data->so);
 	free(data->we);
 	free(data->ea);
+	free(data->sone);
+	free(data->stwo);
+	free(data->sthree);
+	free(data->mini->mini);
+	free(data->mini);
 	if (data->map)
 		free_array(data->map);
 	if (data->og_map)
@@ -71,10 +76,14 @@ void	free_mlx_checks(t_data *data)
 		&& data->we->img)
 	{
 		mlx_destroy_image(data->mlx, data->img->img);
+		mlx_destroy_image(data->mlx, data->mini->mini->img);
 		mlx_destroy_image(data->mlx, data->no->img);
 		mlx_destroy_image(data->mlx, data->so->img);
 		mlx_destroy_image(data->mlx, data->ea->img);
 		mlx_destroy_image(data->mlx, data->we->img);
+		mlx_destroy_image(data->mlx, data->sone->img);
+		mlx_destroy_image(data->mlx, data->stwo->img);
+		mlx_destroy_image(data->mlx, data->sthree->img);
 		if (data->win)
 		{
 			mlx_destroy_window(data->mlx, data->win);
