@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/lib.h"
+#include "includes/lib_bonus.h"
 
 int	ft_press_key(int keysym, t_data *data)
 {

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/lib.h"
+#include "includes/lib_bonus.h"
 
 void	draw_wall(t_data *data, int i)
 {

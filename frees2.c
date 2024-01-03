@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/lib.h"
+#include "includes/lib_bonus.h"
 
 int	free_exit(t_data *data)
 {
@@ -26,6 +26,8 @@ int	free_exit(t_data *data)
 	free(data->so);
 	free(data->we);
 	free(data->ea);
+	free(data->mini->mini);
+	free(data->mini);
 	free_array(data->map);
 	free_array(data->og_map);
 	free(data);
@@ -35,6 +37,7 @@ int	free_exit(t_data *data)
 void	free_mlx(t_data *data)
 {
 	mlx_destroy_image(data->mlx, data->img->img);
+	mlx_destroy_image(data->mlx, data->mini->mini->img);
 	mlx_destroy_image(data->mlx, data->no->img);
 	mlx_destroy_image(data->mlx, data->so->img);
 	mlx_destroy_image(data->mlx, data->ea->img);

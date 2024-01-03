@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/lib.h"
+#include "includes/lib_bonus.h"
 
 void	get_size(t_data *data)
 {

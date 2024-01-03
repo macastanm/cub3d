@@ -6,11 +6,11 @@
 /*   By: ccosta-c <ccosta-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 12:23:46 by ccosta-c          #+#    #+#             */
-/*   Updated: 2023/12/06 12:23:47 by ccosta-c         ###   ########.fr       */
+/*   Updated: 2024/01/02 14:35:37 by ccosta-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/lib.h"
+#include "includes/lib_bonus.h"
 
 t_data	*initialize_struct(char *path)
 {
@@ -23,6 +23,7 @@ t_data	*initialize_struct(char *path)
 	structure->so = malloc(sizeof (t_textures));
 	structure->we = malloc(sizeof (t_textures));
 	structure->ea = malloc(sizeof (t_textures));
+	structure->mini = malloc(sizeof (t_minimap));
 	structure->map_height = 0;
 	structure->map_width = 0;
 	structure->map_found = false;
