@@ -36,7 +36,7 @@
 # define HEIGHT 920
 # define WIDTH 1920
 # define TEX_WIDTH 64
-# define TEX_WIDTH 64
+# define TEX_HEIGHT 64
 
 typedef struct s_info
 {

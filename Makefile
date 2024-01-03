@@ -69,6 +69,7 @@ BONUS				=	bonus/parser.c \
 					bonus/frees2.c \
 					bonus/initialize.c \
 					bonus/initialize2.c \
+					bonus/initialize3.c \
 					bonus/checks.c \
 					bonus/check_map.c \
 					bonus/get_map.c \
@@ -80,7 +81,10 @@ BONUS				=	bonus/parser.c \
 					bonus/raycaster.c \
 					bonus/draw_wall.c \
 					bonus/ft_key.c \
-					bonus/ft_movements.c
+					bonus/ft_movements.c \
+					bonus/minimap.c \
+					bonus/draw_static_map.c \
+					bonus/draw_dinamic_map.c
 OBJS_BONUS		:= $(BONUS:.c=.o)
 NAME			= cub3D
 NAME_BONUS		= cub3D_bonus

@@ -73,6 +73,7 @@ void	init_texture_stuff2(t_data *data)
 	data->ea->bpp = 0;
 	data->ea->line_length = 0;
 	data->ea->endian = 0;
+	init_minimap_stuff(data);
 }
 
 void	init_ray_stuff2(t_data *structure)

@@ -27,7 +27,7 @@ void	draw_wall(t_data *data, int i)
 		* data->text_step;
 	while (y < data->draw_end)
 	{
-		data->tex_y = (int)data->text_pos & (TEX_WIDTH - 1);
+		data->tex_y = (int)data->text_pos & (TEX_HEIGHT - 1);
 		data->text_pos += data->text_step;
 		if (i >= 0 && y >= 0 && data->tex_x >= 0 && data->tex_y >= 0)
 		{
