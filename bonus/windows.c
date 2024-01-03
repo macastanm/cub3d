@@ -46,13 +46,7 @@ void	draw_raycast(t_data *data)
 
 int	game_loop(t_data *data)
 {
-	if (ft_movements(data) == 0)
-	{
-		printf("%i ", data->sprite);
-		usleep(200);
-		draw_raycast(data);
-		return (0);
-	}
+	ft_movements(data);
 	mlx_destroy_image(data->mlx, data->mini->mini->img);
 	data->mini->mini->img = mlx_new_image(data->mlx, data->mini->width, data->mini->height);
 	data->mini->x = 0;

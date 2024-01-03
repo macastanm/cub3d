@@ -113,13 +113,13 @@ void	get_tex_wall(t_data *data)
 
 t_textures	*change_sprite(t_data *data)
 {
-	if (data->sprite >= 300)
+	if (data->sprite >= 30)
 		data->sprite = 0;
-	if (data->sprite >= 0 && data->sprite < 100)
+	if (data->sprite >= 0 && data->sprite < 10)
 		return (data->sone);
-	else if (data->sprite >= 100 && data->sprite < 200)
+	else if (data->sprite >= 10 && data->sprite < 20)
 		return (data->stwo);
-	else if (data->sprite >= 200 && data->sprite < 300)
+	else if (data->sprite >= 20 && data->sprite < 30)
 		return (data->sthree);
 	return (data->sone);
 }
