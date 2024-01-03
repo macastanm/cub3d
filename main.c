@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/lib_bonus.h"
+#include "includes/lib.h"
 
 int	main(int argc, char **argv)
 {

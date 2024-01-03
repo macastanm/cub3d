@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/lib_bonus.h"
+#include "includes/lib.h"
 
 void	get_map_4_checks(t_data *data)
 {

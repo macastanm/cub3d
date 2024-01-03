@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/lib_bonus.h"
+#include "includes/lib.h"
 
 void	parser(t_data *data)
 {

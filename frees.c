@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/lib_bonus.h"
+#include "includes/lib.h"
 
 int	error_handler_checks(t_data *data, int i)
 {
@@ -58,8 +58,6 @@ void	free_exit_checks(t_data *data)
 	free(data->so);
 	free(data->we);
 	free(data->ea);
-	free(data->mini->mini);
-	free(data->mini);
 	if (data->map)
 		free_array(data->map);
 	if (data->og_map)
@@ -73,7 +71,6 @@ void	free_mlx_checks(t_data *data)
 		&& data->we->img)
 	{
 		mlx_destroy_image(data->mlx, data->img->img);
-		mlx_destroy_image(data->mlx, data->mini->mini->img);
 		mlx_destroy_image(data->mlx, data->no->img);
 		mlx_destroy_image(data->mlx, data->so->img);
 		mlx_destroy_image(data->mlx, data->ea->img);

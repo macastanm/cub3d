@@ -61,7 +61,7 @@ SRC				=	parser.c \
 					ft_key.c \
 					ft_movements.c
 OBJS 			:= $(SRC:.c=.o)
-BONUS				=	bonus/parser.c \
+BONUS			=	bonus/parser.c \
 					bonus/main.c \
 					bonus/debugging.c \
 					bonus/utils.c \

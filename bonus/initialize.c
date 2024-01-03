@@ -26,6 +26,7 @@ t_data	*initialize_struct(char *path)
 	structure->sone = malloc(sizeof (t_textures));
 	structure->stwo = malloc(sizeof (t_textures));
 	structure->sthree = malloc(sizeof (t_textures));
+	structure->mini = malloc(sizeof (t_minimap));
 	structure->map_height = 0;
 	structure->map_width = 0;
 	structure->sprite = 1;

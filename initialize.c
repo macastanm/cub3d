@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/lib_bonus.h"
+#include "includes/lib.h"
 
 t_data	*initialize_struct(char *path)
 {
@@ -23,7 +23,6 @@ t_data	*initialize_struct(char *path)
 	structure->so = malloc(sizeof (t_textures));
 	structure->we = malloc(sizeof (t_textures));
 	structure->ea = malloc(sizeof (t_textures));
-	structure->mini = malloc(sizeof (t_minimap));
 	structure->map_height = 0;
 	structure->map_width = 0;
 	structure->map_found = false;
