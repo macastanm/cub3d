@@ -32,13 +32,13 @@ void	convert_string_to_rgb(t_data *data, char **rgb, char place)
 
 int	d_check_tex(t_data *data, char **pp)
 {
-	if (ft_strncmp(pp[0], "NO ", 3) != 0 && data->info->no_tex != NULL)
+	if (ft_strcmp(pp[0], "NO") == 0 && data->info->no_tex != NULL)
 		return (1);
-	if (ft_strncmp(pp[0], "SO ", 3) != 0 && data->info->so_tex != NULL)
+	if (ft_strcmp(pp[0], "SO") == 0 && data->info->so_tex != NULL)
 		return (1);
-	if (ft_strncmp(pp[0], "WE ", 3) != 0 && data->info->we_tex != NULL)
+	if (ft_strcmp(pp[0], "WE") == 0 && data->info->we_tex != NULL)
 		return (1);
-	if (ft_strncmp(pp[0], "EA ", 3) != 0 && data->info->ea_tex != NULL)
+	if (ft_strcmp(pp[0], "EA") == 0 && data->info->ea_tex != NULL)
 		return (1);
 	return (0);
 }

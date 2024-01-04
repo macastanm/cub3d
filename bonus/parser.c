@@ -55,7 +55,7 @@ int	get_textures(t_data *data, char *line)
 
 	pp = ft_split(line, ' ');
 	if (!pp[1])
-		return (free_array(pp), -6);
+		return (free_array(pp), 0);
 	if (d_check_tex(data, pp) != 0)
 		return (free_array(pp), -6);
 	if (ft_strncmp("NO", pp[0], 2) == 0)
@@ -83,10 +83,14 @@ int	get_colors(t_data	*data, char *line)
 	{
 		return (get_colors_xtra(data, line, "F ", 'F'));
 	}
+	if (data->info->floor_rgb == true)
+		return (-9);
 	if (ft_strncmp("C ", line, 2) == 0 && data->info->ceiling_rgb == false)
 	{
 		return (get_colors_xtra(data, line, "C ", 'C'));
 	}
+	if (data->info->ceiling_rgb == true)
+		return (-9);
 	return (0);
 }
 

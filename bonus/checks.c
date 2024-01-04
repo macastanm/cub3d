@@ -45,16 +45,16 @@ void	check_extension(char *file, char *extension)
 
 void	check_textures(t_data *data)
 {
-	if (!*data->info->no_tex)
+	if (data->info->no_tex == NULL)
 		printf(RED "Error\nNorth texture is missing.\n" NRM);
-	if (!*data->info->so_tex)
+	if (data->info->so_tex == NULL)
 		printf(RED "Error\nSouth texture is missing.\n" NRM);
-	if (!*data->info->ea_tex)
+	if (data->info->ea_tex == NULL)
 		printf(RED "Error\nEast texture is missing.\n" NRM);
-	if (!*data->info->we_tex)
+	if (data->info->we_tex == NULL)
 		printf(RED "Error\nWest texture is missing.\n" NRM);
-	if (!*(data->info->no_tex) || !*(data->info->so_tex)
-		|| !*(data->info->ea_tex) || !*(data->info->we_tex))
+	if ((data->info->no_tex == NULL) || (data->info->so_tex == NULL)
+		|| (data->info->ea_tex == NULL) || (data->info->we_tex == NULL))
 		error_handler_checks(data, 0);
 }
 
