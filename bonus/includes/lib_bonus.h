@@ -154,7 +154,7 @@ typedef struct s_data
 ///////////////////////parser.c////////////////////////
 void		parser(t_data *data);
 void		get_tex_col(t_data *data, int fd);
-int 		get_textures(t_data *data, char *line);
+int			get_textures(t_data *data, char *line);
 int			get_colors(t_data	*data, char *line);
 int			get_colors_xtra(t_data *data, char *line, char *tile, char place);
 
@@ -167,6 +167,7 @@ void		check_null(char *file, int fd, int error);
 
 ////////////////////////utils.c////////////////////////
 void		convert_string_to_rgb(t_data *data, char **rgb, char place);
+int			d_check_tex(t_data *data, char **pp);
 
 /////////////////////debugging.c///////////////////////
 void		print_cub_info(t_data *data);

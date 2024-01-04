@@ -6,7 +6,7 @@
 /*   By: ccosta-c <ccosta-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:40:12 by ccosta-c          #+#    #+#             */
-/*   Updated: 2024/01/04 14:30:25 by ccosta-c         ###   ########.fr       */
+/*   Updated: 2024/01/04 14:57:34 by ccosta-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ int	get_textures(t_data *data, char *line)
 	pp = ft_split(line, ' ');
 	if (!pp[1])
 		return (free_array(pp), -6);
+	if (d_check_tex(data, pp) != 0)
+		return (free_array(pp), -9);
 	if (ft_strncmp("NO", pp[0], 2) == 0)
 	{
 		data->info->no_tex = ft_strtrim(pp[1], "\n");

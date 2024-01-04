@@ -56,6 +56,8 @@ int	get_textures(t_data *data, char *line)
 	pp = ft_split(line, ' ');
 	if (!pp[1])
 		return (free_array(pp), -6);
+	if (d_check_tex(data, pp) != 0)
+		return (free_array(pp), -9);
 	if (ft_strncmp("NO", pp[0], 2) == 0)
 	{
 		data->info->no_tex = ft_strtrim(pp[1], "\n");

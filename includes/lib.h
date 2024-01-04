@@ -6,7 +6,7 @@
 /*   By: ccosta-c <ccosta-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:39:41 by ccosta-c          #+#    #+#             */
-/*   Updated: 2023/11/30 16:01:05 by ccosta-c         ###   ########.fr       */
+/*   Updated: 2024/01/04 14:55:31 by ccosta-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,6 +137,7 @@ void		check_null(char *file, int fd, int error);
 
 ////////////////////////utils.c////////////////////////
 void		convert_string_to_rgb(t_data *data, char **rgb, char place);
+int			d_check_tex(t_data *data, char **pp);
 
 /////////////////////debugging.c///////////////////////
 void		print_cub_info(t_data *data);
