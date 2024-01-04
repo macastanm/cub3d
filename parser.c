@@ -6,7 +6,7 @@
 /*   By: ccosta-c <ccosta-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:40:12 by ccosta-c          #+#    #+#             */
-/*   Updated: 2023/11/24 11:49:28 by ccosta-c         ###   ########.fr       */
+/*   Updated: 2024/01/04 14:30:25 by ccosta-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	get_tex_col(t_data *data, int fd)
 		line = get_next_line(fd);
 		if (!line)
 			break ;
-		get_textures(data, line);
+		error = get_textures(data, line);
 		if (error == 0)
 			error = get_colors(data, line);
 		free(line);
@@ -49,11 +49,13 @@ void	get_tex_col(t_data *data, int fd)
 	check_colors(data);
 }
 
-void	get_textures(t_data *data, char *line)
+int	get_textures(t_data *data, char *line)
 {
 	char	**pp;
 
 	pp = ft_split(line, ' ');
+	if (!pp[1])
+		return (free_array(pp), -6);
 	if (ft_strncmp("NO", pp[0], 2) == 0)
 	{
 		data->info->no_tex = ft_strtrim(pp[1], "\n");
@@ -70,16 +72,16 @@ void	get_textures(t_data *data, char *line)
 	{
 		data->info->ea_tex = ft_strtrim(pp[1], "\n");
 	}
-	free_array(pp);
+	return (free_array(pp), 0);
 }
 
 int	get_colors(t_data	*data, char *line)
 {
-	if (ft_strncmp("F", line, 1) == 0 && data->info->floor_rgb == false)
+	if (ft_strncmp("F ", line, 2) == 0 && data->info->floor_rgb == false)
 	{
 		return (get_colors_xtra(data, line, "F ", 'F'));
 	}
-	if (ft_strncmp("C", line, 1) == 0 && data->info->ceiling_rgb == false)
+	if (ft_strncmp("C ", line, 2) == 0 && data->info->ceiling_rgb == false)
 	{
 		return (get_colors_xtra(data, line, "C ", 'C'));
 	}
