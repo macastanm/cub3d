@@ -105,7 +105,7 @@ void	check_null(char *file, int fd, int error)
 	{
 		free(line);
 		close(fd);
-		printf(RED "Error\nNULL file\n." NRM);
+		printf(RED "Error\nNULL file.\n" NRM);
 		exit(-3);
 	}
 	close(fd);

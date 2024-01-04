@@ -81,3 +81,32 @@ int	check_numeric(char **rgb)
 	}
 	return (0);
 }
+
+void	check_null(char *file, int fd, int error)
+{
+	char	*line;
+
+	fd = open(file, O_RDONLY);
+	error = 1;
+	if (fd == -1)
+	{
+		printf(RED "Error\n%s." NRM, strerror(errno));
+		exit(-1);
+	}
+	while (1)
+	{
+		line = get_next_line(fd);
+		if (!line)
+			break ;
+		error = 0;
+		free(line);
+	}
+	if (error != 0)
+	{
+		free(line);
+		close(fd);
+		printf(RED "Error\nNULL file.\n" NRM);
+		exit(-3);
+	}
+	close(fd);
+}
