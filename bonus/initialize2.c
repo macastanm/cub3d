@@ -133,4 +133,11 @@ void	open_addr(t_data *data)
 	data->sthree->addr = mlx_get_data_addr(data->sthree->img,
 			&data->sthree->bpp, &data->sthree->line_length,
 			&data->sthree->endian);
+	data->eone->addr = mlx_get_data_addr(data->eone->img, &data->eone->bpp,
+			&data->eone->line_length, &data->eone->endian);
+	data->etwo->addr = mlx_get_data_addr(data->etwo->img, &data->etwo->bpp,
+			&data->etwo->line_length, &data->etwo->endian);
+	data->ethree->addr = mlx_get_data_addr(data->ethree->img,
+			&data->ethree->bpp, &data->ethree->line_length,
+			&data->ethree->endian);
 }

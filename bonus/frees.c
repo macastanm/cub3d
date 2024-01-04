@@ -58,15 +58,23 @@ void	free_exit_checks(t_data *data)
 	free(data->so);
 	free(data->we);
 	free(data->ea);
-	free(data->sone);
-	free(data->stwo);
-	free(data->sthree);
+	free_sprites(data);
 	free(data->mini);
 	if (data->map)
 		free_array(data->map);
 	if (data->og_map)
 		free_array(data->og_map);
 	free(data);
+}
+
+void	free_sprites(t_data *data)
+{
+	free(data->sone);
+	free(data->stwo);
+	free(data->sthree);
+	free(data->eone);
+	free(data->etwo);
+	free(data->ethree);
 }
 
 void	free_mlx_checks(t_data *data)
@@ -83,6 +91,9 @@ void	free_mlx_checks(t_data *data)
 		mlx_destroy_image(data->mlx, data->sone->img);
 		mlx_destroy_image(data->mlx, data->stwo->img);
 		mlx_destroy_image(data->mlx, data->sthree->img);
+		mlx_destroy_image(data->mlx, data->eone->img);
+		mlx_destroy_image(data->mlx, data->etwo->img);
+		mlx_destroy_image(data->mlx, data->ethree->img);
 		if (data->win)
 		{
 			mlx_destroy_window(data->mlx, data->win);

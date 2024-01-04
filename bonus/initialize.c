@@ -26,6 +26,9 @@ t_data	*initialize_struct(char *path)
 	structure->sone = malloc(sizeof (t_textures));
 	structure->stwo = malloc(sizeof (t_textures));
 	structure->sthree = malloc(sizeof (t_textures));
+	structure->eone = malloc(sizeof (t_textures));
+	structure->etwo = malloc(sizeof (t_textures));
+	structure->ethree = malloc(sizeof (t_textures));
 	structure->mini = malloc(sizeof (t_minimap));
 	initialize_struct2(structure);
 	init_texture_stuff(structure);
@@ -50,6 +53,9 @@ void	initialize_struct2(t_data *structure)
 	structure->sone->img = NULL;
 	structure->stwo->img = NULL;
 	structure->sthree->img = NULL;
+	structure->eone->img = NULL;
+	structure->etwo->img = NULL;
+	structure->ethree->img = NULL;
 }
 
 void	start_mlx(t_data *data)
@@ -79,6 +85,12 @@ void	open_images(t_data *data)
 			STWO, &data->stwo->width, &data->stwo->height);
 	data->sthree->img = mlx_xpm_file_to_image(data->mlx,
 			STHREE, &data->sthree->width, &data->sthree->height);
+	data->eone->img = mlx_xpm_file_to_image(data->mlx,
+			EONE, &data->eone->width, &data->eone->height);
+	data->etwo->img = mlx_xpm_file_to_image(data->mlx,
+			ETWO, &data->etwo->width, &data->etwo->height);
+	data->ethree->img = mlx_xpm_file_to_image(data->mlx,
+			ETHREE, &data->ethree->width, &data->ethree->height);
 }
 
 t_info	*initialize_tinfo(char *path)

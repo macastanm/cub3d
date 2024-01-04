@@ -44,6 +44,9 @@
 # define SONE "./textures/sky_1.xpm"
 # define STWO "./textures/sky_2.xpm"
 # define STHREE "./textures/sky_3.xpm"
+# define EONE "./textures/disco1.xpm"
+# define ETWO "./textures/disco2.xpm"
+# define ETHREE "./textures/disco3.xpm"
 
 typedef struct s_info
 {
@@ -99,6 +102,9 @@ typedef struct s_data
 	t_textures	*sone;
 	t_textures	*stwo;
 	t_textures	*sthree;
+	t_textures	*eone;
+	t_textures	*etwo;
+	t_textures	*ethree;
 	t_minimap	*mini;
 	int			sprite;
 	void		*win;
@@ -170,6 +176,7 @@ void		line_print_map(t_data *data, int size);
 ///////////////////////frees.c/////////////////////////
 int			error_handler_checks(t_data *data, int i);
 void		free_exit_checks(t_data *data);
+void		free_sprites(t_data *data);
 void		free_mlx_checks(t_data *data);
 
 ///////////////////////frees2.c/////////////////////////
@@ -268,5 +275,9 @@ void		draw_dinamic_player(t_data *data);
 /////////////////////draw_dinamic_map.c/////////////////
 void		draw_dinamic_map(t_data *data, int x, int y);
 void		draw_static_player(t_data *data);
+
+/////////////////////sprites.c/////////////////
+void		init_sprite(t_data *data);
+t_textures	*change_sprite2(t_data *data);
 
 #endif

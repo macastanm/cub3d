@@ -29,6 +29,9 @@ int	free_exit(t_data *data)
 	free(data->sone);
 	free(data->stwo);
 	free(data->sthree);
+	free(data->eone);
+	free(data->etwo);
+	free(data->ethree);
 	free(data->mini->mini);
 	free(data->mini);
 	free_array(data->map);
@@ -48,6 +51,9 @@ void	free_mlx(t_data *data)
 	mlx_destroy_image(data->mlx, data->sone->img);
 	mlx_destroy_image(data->mlx, data->stwo->img);
 	mlx_destroy_image(data->mlx, data->sthree->img);
+	mlx_destroy_image(data->mlx, data->eone->img);
+	mlx_destroy_image(data->mlx, data->etwo->img);
+	mlx_destroy_image(data->mlx, data->ethree->img);
 	mlx_destroy_window(data->mlx, data->win);
 	mlx_destroy_display(data->mlx);
 	free(data->mlx);

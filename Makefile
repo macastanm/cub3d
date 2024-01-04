@@ -70,6 +70,7 @@ BONUS			=	bonus/parser.c \
 					bonus/initialize.c \
 					bonus/initialize2.c \
 					bonus/initialize3.c \
+					bonus/sprites.c \
 					bonus/checks.c \
 					bonus/check_map.c \
 					bonus/get_map.c \

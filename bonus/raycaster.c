@@ -105,7 +105,7 @@ void	get_tex_wall(t_data *data)
 	else
 	{
 		if (data->raydir_x < 0)
-			data->aux = data->ea;
+			data->aux = change_sprite2(data);
 		else
 			data->aux = data->we;
 	}

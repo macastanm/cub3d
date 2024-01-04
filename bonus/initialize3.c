@@ -14,6 +14,7 @@
 
 void	init_minimap_stuff(t_data *data)
 {
+	init_sprite(data);
 	data->mini->mini = malloc(sizeof (t_textures));
 	data->mini->mini->addr = NULL;
 	data->mini->mini->height = 0;
