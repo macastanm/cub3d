@@ -6,7 +6,7 @@
 /*   By: ccosta-c <ccosta-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:40:12 by ccosta-c          #+#    #+#             */
-/*   Updated: 2024/01/04 15:53:19 by ccosta-c         ###   ########.fr       */
+/*   Updated: 2024/01/04 16:36:52 by ccosta-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,18 +80,18 @@ int	get_textures(t_data *data, char *line)
 
 int	get_colors(t_data	*data, char *line)
 {
+	if (ft_strncmp("C ", line, 2) == 0 && data->info->ceiling_rgb == true)
+		return (-9);
+	if (ft_strncmp("F ", line, 2) == 0 && data->info->floor_rgb == true)
+		return (-9);
 	if (ft_strncmp("F ", line, 2) == 0 && data->info->floor_rgb == false)
 	{
 		return (get_colors_xtra(data, line, "F ", 'F'));
 	}
-	if (data->info->floor_rgb == true)
-		return (-9);
 	if (ft_strncmp("C ", line, 2) == 0 && data->info->ceiling_rgb == false)
 	{
 		return (get_colors_xtra(data, line, "C ", 'C'));
 	}
-	if (data->info->ceiling_rgb == true)
-		return (-9);
 	return (0);
 }
 

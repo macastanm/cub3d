@@ -1,10 +1,9 @@
-NO   ./textures/n_tex.xpm 
-SO ./textures/s_tex.xpm                             
-EA ./textures/e_tex.xpm
-WE   ./textures/n_tex.xpm 
+NO   ./textures/n_tex.xpm
+SO    ./textures/s_tex.xpm                             
+EA     ./textures/e_tex.xpm
+WE       ./textures/n_tex.xpm
 
 F 54,78,87
-C   255,240,255
 C   255,240,255
 
 111    111111111111 1111111

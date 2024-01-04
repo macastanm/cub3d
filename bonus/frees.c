@@ -29,7 +29,7 @@ int	error_handler_checks(t_data *data, int i)
 	if (i == -8)
 		printf(RED "Error\nMap not found.\n" NRM);
 	if (i == -9)
-		printf(RED "Error\nOne of the color numbers missing.\n" NRM);
+		printf(RED "Error\nColor Error.\n" NRM);
 	if (i == -10)
 		printf(RED "Error\nInvalid characters on the og_map.\n" NRM);
 	if (i == -11)

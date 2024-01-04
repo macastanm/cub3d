@@ -34,7 +34,8 @@ void	get_tex_col(t_data *data, int fd)
 		line = get_next_line(fd);
 		if (!line)
 			break ;
-		error = get_textures(data, line);
+		if (error == 0)
+			error = get_textures(data, line);
 		if (error == 0)
 			error = get_colors(data, line);
 		free(line);
@@ -58,19 +59,19 @@ int	get_textures(t_data *data, char *line)
 		return (free_array(pp), 0);
 	if (d_check_tex(data, pp) != 0)
 		return (free_array(pp), -6);
-	if (ft_strncmp("NO", pp[0], 2) == 0)
+	if (ft_strcmp("NO", pp[0]) == 0)
 	{
 		data->info->no_tex = ft_strtrim(pp[1], "\n");
 	}
-	if (ft_strncmp("SO", pp[0], 2) == 0)
+	if (ft_strcmp("SO", pp[0]) == 0)
 	{
 		data->info->so_tex = ft_strtrim(pp[1], "\n");
 	}
-	if (ft_strncmp("WE", pp[0], 2) == 0)
+	if (ft_strcmp("WE", pp[0]) == 0)
 	{
 		data->info->we_tex = ft_strtrim(pp[1], "\n");
 	}
-	if (ft_strncmp("EA", pp[0], 2) == 0)
+	if (ft_strcmp("EA", pp[0]) == 0)
 	{
 		data->info->ea_tex = ft_strtrim(pp[1], "\n");
 	}
@@ -79,18 +80,18 @@ int	get_textures(t_data *data, char *line)
 
 int	get_colors(t_data	*data, char *line)
 {
+	if (ft_strncmp("C ", line, 2) == 0 && data->info->ceiling_rgb == true)
+		return (-9);
+	if (ft_strncmp("F ", line, 2) == 0 && data->info->floor_rgb == true)
+		return (-9);
 	if (ft_strncmp("F ", line, 2) == 0 && data->info->floor_rgb == false)
 	{
 		return (get_colors_xtra(data, line, "F ", 'F'));
 	}
-	if (data->info->floor_rgb == true)
-		return (-9);
 	if (ft_strncmp("C ", line, 2) == 0 && data->info->ceiling_rgb == false)
 	{
 		return (get_colors_xtra(data, line, "C ", 'C'));
 	}
-	if (data->info->ceiling_rgb == true)
-		return (-9);
 	return (0);
 }
 
