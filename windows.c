@@ -18,7 +18,7 @@ void	start_windows(t_data *data)
 	draw_raycast(data);
 	mlx_hook(data->win, KeyPress, KeyPressMask, ft_press_key, data);
 	mlx_hook(data->win, KeyRelease, KeyReleaseMask, ft_release_key, data);
-	mlx_hook(data->win, DestroyNotify, StructureNotifyMask, &free_exit, data);
+	mlx_hook(data->win, DestroyNotify, StructureNotifyMask, free_exit, data);
 	mlx_loop_hook(data->mlx, game_loop, data);
 	mlx_loop(data->mlx);
 }

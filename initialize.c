@@ -42,6 +42,8 @@ t_data	*initialize_struct(char *path)
 void	start_mlx(t_data *data)
 {
 	data->mlx = mlx_init();
+	if (data->mlx == NULL)
+		error_handler_checks(data, -1);
 	open_images(data);
 	open_addr(data);
 }
