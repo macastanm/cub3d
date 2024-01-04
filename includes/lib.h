@@ -133,6 +133,7 @@ void		check_colors(t_data *data);
 void		check_extension(char *file, char *extension);
 void		check_textures(t_data *data);
 int			check_numeric(char **rgb);
+void		check_null(char *file, int fd, int error);
 
 ////////////////////////utils.c////////////////////////
 void		convert_string_to_rgb(t_data *data, char **rgb, char place);
