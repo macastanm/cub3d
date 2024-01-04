@@ -168,6 +168,7 @@ void		check_null(char *file, int fd, int error);
 ////////////////////////utils.c////////////////////////
 void		convert_string_to_rgb(t_data *data, char **rgb, char place);
 int			d_check_tex(t_data *data, char **pp);
+int			ft_strcmp(const char *str1, const char *str2);
 
 /////////////////////debugging.c///////////////////////
 void		print_cub_info(t_data *data);
