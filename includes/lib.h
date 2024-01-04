@@ -124,7 +124,7 @@ typedef struct s_data
 ///////////////////////parser.c////////////////////////
 void		parser(t_data *data);
 void		get_tex_col(t_data *data, int fd);
-int get_textures(t_data *data, char *line);
+int			get_textures(t_data *data, char *line);
 int			get_colors(t_data	*data, char *line);
 int			get_colors_xtra(t_data *data, char *line, char *tile, char place);
 
