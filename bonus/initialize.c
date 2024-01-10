@@ -6,7 +6,7 @@
 /*   By: ccosta-c <ccosta-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 12:23:46 by ccosta-c          #+#    #+#             */
-/*   Updated: 2024/01/03 16:08:38 by ccosta-c         ###   ########.fr       */
+/*   Updated: 2024/01/10 19:55:21 by ccosta-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void	initialize_struct2(t_data *structure)
 	structure->so->img = NULL;
 	structure->ea->img = NULL;
 	structure->we->img = NULL;
+	structure->img->img = NULL;
 	structure->sone->img = NULL;
 	structure->stwo->img = NULL;
 	structure->sthree->img = NULL;

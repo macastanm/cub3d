@@ -32,6 +32,7 @@ t_data	*initialize_struct(char *path)
 	structure->so->img = NULL;
 	structure->ea->img = NULL;
 	structure->we->img = NULL;
+	structure->img->img = NULL;
 	init_texture_stuff(structure);
 	structure->og_map = NULL;
 	structure->map = NULL;

@@ -79,23 +79,22 @@ void	free_sprites(t_data *data)
 
 void	free_mlx_checks(t_data *data)
 {
-	if (data->no->img && data->so->img && data->ea->img
-		&& data->we->img)
-	{
+	if (data->img->img)
 		mlx_destroy_image(data->mlx, data->img->img);
-		mlx_destroy_image(data->mlx, data->mini->mini->img);
+	if (data->no->img)
 		mlx_destroy_image(data->mlx, data->no->img);
+	if (data->so->img)
 		mlx_destroy_image(data->mlx, data->so->img);
+	if (data->ea->img)
 		mlx_destroy_image(data->mlx, data->ea->img);
+	if (data->we->img)
 		mlx_destroy_image(data->mlx, data->we->img);
-		free_sprites2(data);
-		if (data->win)
-		{
-			mlx_destroy_window(data->mlx, data->win);
-			free(data->win);
-		}
-		mlx_destroy_display(data->mlx);
-		free(data->mlx);
+	if (data->win)
+	{
+		mlx_destroy_window(data->mlx, data->win);
+		free(data->win);
 	}
-	free(data->mini->mini);
+	mlx_destroy_display(data->mlx);
+	free(data->mlx);
 }
+
