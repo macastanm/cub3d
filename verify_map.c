@@ -6,7 +6,7 @@
 /*   By: ccosta-c <ccosta-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 15:56:39 by ccosta-c          #+#    #+#             */
-/*   Updated: 2023/11/30 15:40:09 by ccosta-c         ###   ########.fr       */
+/*   Updated: 2024/01/10 21:50:18 by ccosta-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 void	verify_map(t_data	*data)
 {
 	check_characters(data->og_map, data);
+	if (data->p_x == 0 || data->p_y == 0)
+		error_handler_checks(data, -11);
 	print_cub_info(data);
 }
 
