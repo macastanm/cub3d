@@ -88,12 +88,7 @@ void	free_mlx_checks(t_data *data)
 		mlx_destroy_image(data->mlx, data->so->img);
 		mlx_destroy_image(data->mlx, data->ea->img);
 		mlx_destroy_image(data->mlx, data->we->img);
-		mlx_destroy_image(data->mlx, data->sone->img);
-		mlx_destroy_image(data->mlx, data->stwo->img);
-		mlx_destroy_image(data->mlx, data->sthree->img);
-		mlx_destroy_image(data->mlx, data->eone->img);
-		mlx_destroy_image(data->mlx, data->etwo->img);
-		mlx_destroy_image(data->mlx, data->ethree->img);
+		free_sprites2(data);
 		if (data->win)
 		{
 			mlx_destroy_window(data->mlx, data->win);

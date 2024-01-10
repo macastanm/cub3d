@@ -58,21 +58,21 @@ t_textures	*change_sprite(t_data *data)
 		data->sprite = 0;
 	if (data->sprite >= 0 && data->sprite < 10)
 	{
-		if (data->sone == NULL)
+		if (data->sone->img == NULL)
 			return (data->so);
 		else
 			return (data->sone);
 	}
 	else if (data->sprite >= 10 && data->sprite < 20)
 	{
-		if (data->stwo == NULL)
+		if (data->stwo->img == NULL)
 			return (data->so);
 		else
 			return (data->stwo);
 	}
 	else if (data->sprite >= 20 && data->sprite < 30)
 	{
-		if (data->sthree == NULL)
+		if (data->sthree->img == NULL)
 			return (data->so);
 		else
 			return (data->sthree);
