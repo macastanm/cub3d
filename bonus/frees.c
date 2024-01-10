@@ -59,7 +59,6 @@ void	free_exit_checks(t_data *data)
 	free(data->we);
 	free(data->ea);
 	free_sprites(data);
-	free(data->mini);
 	if (data->map)
 		free_array(data->map);
 	if (data->og_map)
@@ -75,6 +74,10 @@ void	free_sprites(t_data *data)
 	free(data->eone);
 	free(data->etwo);
 	free(data->ethree);
+	if (data->mini->mini)
+		free(data->mini->mini);
+	if (data->mini)
+		free(data->mini);
 }
 
 void	free_mlx_checks(t_data *data)
@@ -89,6 +92,7 @@ void	free_mlx_checks(t_data *data)
 		mlx_destroy_image(data->mlx, data->ea->img);
 	if (data->we->img)
 		mlx_destroy_image(data->mlx, data->we->img);
+	free_sprites2(data);
 	if (data->win)
 	{
 		mlx_destroy_window(data->mlx, data->win);
