@@ -6,7 +6,7 @@
 /*   By: ccosta-c <ccosta-c@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 12:23:46 by ccosta-c          #+#    #+#             */
-/*   Updated: 2024/01/02 14:35:37 by ccosta-c         ###   ########.fr       */
+/*   Updated: 2024/01/10 20:02:55 by ccosta-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void	start_mlx(t_data *data)
 	data->mlx = mlx_init();
 	if (data->mlx == NULL)
 		error_handler_checks(data, -1);
+	data->win = mlx_new_window(data->mlx, WIDTH, HEIGHT, "cub3D");
 	open_images(data);
 	open_addr(data);
 }
