@@ -51,6 +51,11 @@ void	init_minimap(t_data *data)
 {
 	data->mini->height = check_map_height(data);
 	data->mini->width = check_map_width(data);
+	if (data->mini->flag == 1)
+	{
+		data->mini->height = 143;
+		data->mini->width = 143;
+	}
 	data->mini->mini->img = mlx_new_image(data->mlx, data->mini->width,
 			data->mini->height);
 	data->mini->mini->addr = mlx_get_data_addr(data->mini->mini->img,
