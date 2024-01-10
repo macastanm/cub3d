@@ -15,6 +15,8 @@
 void	verify_map(t_data	*data)
 {
 	check_characters(data->og_map, data);
+	if (data->p_x == 0 || data->p_y == 0)
+		error_handler_checks(data, -11);
 	print_cub_info(data);
 }
 

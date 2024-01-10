@@ -33,7 +33,7 @@ int	error_handler_checks(t_data *data, int i)
 	if (i == -10)
 		printf(RED "Error\nInvalid characters on the og_map.\n" NRM);
 	if (i == -11)
-		printf(RED "Error\nMore than one player character found.\n" NRM);
+		printf(RED "Error\nPlayer Error.\n" NRM);
 	if (i == -12)
 		printf(RED "Error\nInvalid Map!\n" NRM);
 	free_exit_checks(data);
