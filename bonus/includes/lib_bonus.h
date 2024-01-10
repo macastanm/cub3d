@@ -281,5 +281,7 @@ void		draw_static_player(t_data *data);
 /////////////////////sprites.c/////////////////
 void		init_sprite(t_data *data);
 t_textures	*change_sprite2(t_data *data);
+void		open_sprites_addr(t_data *data);
+void		free_sprites2(t_data *data);
 
 #endif

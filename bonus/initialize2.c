@@ -126,18 +126,5 @@ void	open_addr(t_data *data)
 			&data->we->line_length, &data->we->endian);
 	data->ea->addr = mlx_get_data_addr(data->ea->img, &data->ea->bpp,
 			&data->ea->line_length, &data->ea->endian);
-	data->sone->addr = mlx_get_data_addr(data->sone->img, &data->sone->bpp,
-			&data->sone->line_length, &data->sone->endian);
-	data->stwo->addr = mlx_get_data_addr(data->stwo->img, &data->stwo->bpp,
-			&data->stwo->line_length, &data->stwo->endian);
-	data->sthree->addr = mlx_get_data_addr(data->sthree->img,
-			&data->sthree->bpp, &data->sthree->line_length,
-			&data->sthree->endian);
-	data->eone->addr = mlx_get_data_addr(data->eone->img, &data->eone->bpp,
-			&data->eone->line_length, &data->eone->endian);
-	data->etwo->addr = mlx_get_data_addr(data->etwo->img, &data->etwo->bpp,
-			&data->etwo->line_length, &data->etwo->endian);
-	data->ethree->addr = mlx_get_data_addr(data->ethree->img,
-			&data->ethree->bpp, &data->ethree->line_length,
-			&data->ethree->endian);
+	open_sprites_addr(data);
 }
