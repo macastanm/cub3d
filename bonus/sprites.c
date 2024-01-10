@@ -39,10 +39,25 @@ t_textures	*change_sprite2(t_data *data)
 	if (data->sprite >= 30)
 		data->sprite = 0;
 	if (data->sprite >= 0 && data->sprite < 10)
-		return (data->eone);
+	{
+		if (data->eone == NULL)
+			return (data->ea);
+		else
+			return (data->eone);
+	}
 	else if (data->sprite >= 10 && data->sprite < 20)
-		return (data->etwo);
+	{
+		if (data->etwo == NULL)
+			return (data->ea);
+		else
+			return (data->etwo);
+	}
 	else if (data->sprite >= 20 && data->sprite < 30)
-		return (data->ethree);
-	return (data->eone);
+	{
+		if (data->ethree == NULL)
+			return (data->ea);
+		else
+			return (data->ethree);
+	}
+	return (data->ea);
 }
